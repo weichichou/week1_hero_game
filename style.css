@@ -1,10 +1,13 @@
 .battle {
     display:flex;
+    margin-top: 1rem;
     
 }
 
-#enemy2_img{
-    width:90px;
+.enemy_img{
+    width: 80px;
+    height: auto;
+    margin: 0 1rem;
 }
 
 div#enemy2 {
@@ -23,8 +26,15 @@ div#user {
     align-items: center;
 }
 
+#user img {
+    margin: 0 1rem;
+}
+
 div#rules {
     text-align: center;
+    background-color:rgb(255,249,207);
+    padding: 1rem 1rem;
+    margin-top: 1rem;
 }
 
 h4 {
@@ -32,13 +42,28 @@ h4 {
 }
 
 div#action {
+    margin-top: 1rem;
+    background-color:rgb(219,190,128);
+    padding: 1rem 1rem;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
+}
+
+div#pick-up-weapon {
+    margin-top: 1rem;
+    background-color:rgb(225,142,95);
+    padding: 1rem 1rem;
+    display: flex;
+    justify-content: flex-start; 
 }
 
 div#action img {
     height: 65px;
     width: 75px;
+    margin: 0 1rem;
+}
+
+div#pick-up-weapon img {
     margin: 0 1rem;
 }
 
@@ -58,6 +83,3 @@ div#action img {
     margin-top: 40vh;
 }
 
-/* button#run_the_test {
-    display: none;
-} */

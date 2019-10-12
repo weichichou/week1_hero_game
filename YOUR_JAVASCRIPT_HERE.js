@@ -34,6 +34,7 @@ function equipWeapon(person){
     if (person.inventory.length > 0){
     person.weapon = person.inventory[0];
     person.inventory.shift();
+    person.inventory.push(person.weapon)
     }
     displayStatus();
 }
@@ -175,7 +176,7 @@ enemy3Img.addEventListener('click',function(event){
     //enemy restore health
     const possibilityOfRegenerate = Math.random();
     console.log(possibilityOfRegenerate);
-    if (enemy3.health <= 3 && possibilityOfRegenerate >= 0.9){
+    if (enemy3.health <= 3 && possibilityOfRegenerate >= 0.5){
         enemy3.health = 10;
         document.querySelector('#enemy3_status h4').innerHTML = `Health: ${enemy3.health}`
         alert(`Enemy 3 regenerates health!`);
