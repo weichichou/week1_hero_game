@@ -29,6 +29,7 @@ function pickUpItem(person, weapon){
 function equipWeapon(person){
     if (person.inventory.length > 0){
     person.weapon = person.inventory[0];
+    person.inventory.shift();
     }
     displayStatus();
 }
@@ -39,14 +40,14 @@ innImg.addEventListener('click',function(event){
     rest(hero);
 })
 
-const weaponImg = document.getElementById('dagger');
-weaponImg.addEventListener('click',function(event){
-    const dagger ={
-        type: 'dagger',
-        damage: 2
-    }
-    pickUpItem(hero, dagger);
-})
+
+for(const weapon of weapons){
+    const weaponImg = document.getElementById(weapon.type);
+    console.log(weapon)
+    weaponImg.addEventListener('click',function(event){
+        pickUpItem(hero, weapon);
+    })
+}
 
 const bagImg = document.getElementById('bag');
 bagImg.addEventListener('click',function(event){

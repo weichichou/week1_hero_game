@@ -38,10 +38,16 @@
 
 
   <div id='action'>
-    <img id='inn' src="image/wood_pail.png" alt="">
-    <img id='bag' src="image/Treasure_box.png" alt="">
-    <img id='dagger' src="image/Kicktoy_bunny.png" alt="">
+    <img title='Rest to restore health' id='inn' src="image/wood_pail.png" alt="">
+    <img title='Equip weapon' id='bag' src="image/Treasure_box.png" alt="">
+</div>
 
+<div id='pick-up-weapon'>
+    Pick a weapon and store in your treasure box.
+    <img title='Bunny dagger' id='dagger' src="image/Kicktoy_bunny.png" alt="">
+    <img title='Fish sword' id='sword' src="image/Kicktoy_fish.png" alt="">
+    <img title='Mouse wand' id='wand' src="image/Kicktoy_mouse.png" alt="">
+    
 </div>
 
   <!-- I RECOMMEND YOU LEAVE THE REST UNTOUCHED -->
@@ -51,10 +57,12 @@
   <!-- MOCHA TEST FEEDBACK WILL BE RENDERED HERE -->
   </div>
 
+
   <script src="lib/chai.js"></script>
   <script src="lib/mocha.js"></script>
   <script src="lib/sinon.js"></script>
   <script>mocha.setup('bdd')</script>
+  <script src="weapon_list.js"></script>
   <script src="YOUR_JAVASCRIPT_HERE.js"></script>
   <script src="lib/game_logic.test.js"></script>
 
