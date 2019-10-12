@@ -72,12 +72,34 @@ function displayStatus(){
     const userInventory = document.getElementById('user_inventory')
 
     userName.innerHTML = hero.name
-    userHealth.innerHTML = `Heath: ${hero.health}`
+    userHealth.innerHTML = `Health: ${hero.health}`
     userWeapon.innerHTML = `Weapon: ${hero.weapon.type}; Damage: ${hero.weapon.damage}`
     userInventory.innerHTML = `Inventory: ${showInventory(hero)}`
 
 }
 
 displayStatus();
+
+const enemy1 = {
+    health: 10,
+}
+
+const enemy1Img = document.getElementById('enemy1_img')
+enemy1Img.addEventListener('click',function(event){
+
+    //enemy health decreases
+    enemy1.health -= hero.weapon.damage;
+    document.querySelector('#enemy_status h4').innerHTML = `Health: ${enemy1.health}`
+
+    //if health <= 0, image disapper
+    if (enemy1.health <= 0){
+        document.getElementById('enemy_status').style.display = 'none';
+        document.querySelector('.enemy_img').style.display = 'none';
+        const winMessage = document.createElement('h1');
+        winMessage.innerHTML = `YOU WIN!!`
+        document.getElementById('enemy').appendChild(winMessage);
+    }
+
+})
 
 
