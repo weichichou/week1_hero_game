@@ -119,6 +119,11 @@ enemy1Img.addEventListener('click',function(event){
         const winMessage = document.createElement('h1');
         winMessage.innerHTML = `YOU WIN!!`
         document.getElementById('enemy1').appendChild(winMessage);
+
+        setTimeout(function(){
+            document.getElementById('enemy1').style.display ='none';
+            document.getElementById('enemy2').style.display ='flex';
+        },500)
     }
 
 })
@@ -132,7 +137,7 @@ enemy2Img.addEventListener('click',function(event){
 
 
     //enemy attack user
-    const enemyAttackDamage = Math.floor(Math.random()*6)+1;
+    const enemyAttackDamage = Math.floor(Math.random()*4)+1;
     if (enemy2.health > 0 ){
         setTimeout(function(){
             alert(`Enemy 2 attacks! You lose ${enemyAttackDamage} health`);
@@ -150,6 +155,12 @@ enemy2Img.addEventListener('click',function(event){
         const winMessage = document.createElement('h1');
         winMessage.innerHTML = `YOU WIN!!`
         document.getElementById('enemy2').appendChild(winMessage);
+    
+        setTimeout(function(){
+            document.getElementById('enemy2').style.display ='none';
+            document.getElementById('enemy3').style.display ='flex';
+        },500)
+    
     }
 
 })
@@ -164,7 +175,7 @@ enemy3Img.addEventListener('click',function(event){
     //enemy restore health
     const possibilityOfRegenerate = Math.random();
     console.log(possibilityOfRegenerate);
-    if (enemy3.health <= 3 && possibilityOfRegenerate >= 0.5){
+    if (enemy3.health <= 3 && possibilityOfRegenerate >= 0.9){
         enemy3.health = 10;
         document.querySelector('#enemy3_status h4').innerHTML = `Health: ${enemy3.health}`
         alert(`Enemy 3 regenerates health!`);
@@ -185,13 +196,11 @@ enemy3Img.addEventListener('click',function(event){
     
 
 
-    //if health <= 0, image disapper
+    //if health <= 0, overlay shows win
     if (enemy3.health <= 0){
-        document.getElementById('enemy3_status').style.display = 'none';
-        document.getElementById('enemy3_img').style.display = 'none';
-        const winMessage = document.createElement('h1');
-        winMessage.innerHTML = `YOU WIN!!`
-        document.getElementById('enemy3').appendChild(winMessage);
+        document.getElementById('overlay').style.backgroundColor='rgba(215, 166, 183, 0.85)';
+        document.querySelector('#overlay h1').innerHTML = "YOU WIN!"
+        document.getElementById('overlay').style.display='block';
     }
 
 })

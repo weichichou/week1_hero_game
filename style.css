@@ -3,12 +3,16 @@
     
 }
 
-.enemy img {
-    
-}
-
 #enemy2_img{
     width:90px;
+}
+
+div#enemy2 {
+    display: none;
+}
+
+div#enemy3 {
+    display: none;
 }
 
 div.enemy {
