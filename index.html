@@ -25,7 +25,17 @@
       </div>
       <img class='enemy_img' id='enemy2_img' src="image/Enemy2.png" alt="">
   
-    </div>
+  </div>
+
+  <div class='battle enemy' id='enemy3'>
+      <div id='enemy3_status'>
+        <h3>Enemy 3</h3>
+        <h4>Health: 10</h4>
+      </div>
+      <img class='enemy_img' id='enemy3_img' src="image/Enemy3.png" alt="">
+  
+  </div>
+
 
   <div id='rules'>
     <p>Click on enemy to attack!</p>
@@ -58,6 +68,12 @@
     <img title='Mouse wand' id='wand' src="image/Kicktoy_mouse.png" alt="">
     
 </div>
+
+<div id='overlay'> 
+  <h1>YOU LOSE</h1>
+  <h2>Refresh the page to play again :)</h2>
+</div>
+
 
   <!-- I RECOMMEND YOU LEAVE THE REST UNTOUCHED -->
   <button id='run_the_test' onclick="mocha.checkLeaks(); mocha.run();">Run the tests!</button>

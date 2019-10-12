@@ -81,6 +81,11 @@ function displayStatus(){
     userWeapon.innerHTML = `Weapon: ${hero.weapon.type}; Damage: ${hero.weapon.damage}`
     userInventory.innerHTML = `Inventory: ${showInventory(hero)}`
 
+    //if user health < 0
+    if (hero.health <= 0){
+    document.getElementById('overlay').style.display = 'block';
+}
+
 }
 
 displayStatus();
@@ -123,10 +128,12 @@ enemy2Img.addEventListener('click',function(event){
 
 
     //enemy attack user
+    const enemyAttackDamage = Math.floor(Math.random()*6)+1;
     if (enemy2.health > 0 ){
         setTimeout(function(){
-            alert("Enemy 2 attacks!");
-            hero.health -= 3;
+            alert(`Enemy 2 attacks! You lose ${enemyAttackDamage} health`);
+
+            hero.health -= enemyAttackDamage;
             displayStatus();
             },300);
     }
@@ -142,5 +149,6 @@ enemy2Img.addEventListener('click',function(event){
     }
 
 })
+
 
 
