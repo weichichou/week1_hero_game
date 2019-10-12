@@ -1,3 +1,5 @@
+Play the game at: https://weichichou.github.io/week1_hero_game/.
+
 # Beginner Bootcamp Homework
 
 Hello beginner bootcampers. Here is your first formal homework  assignment!
