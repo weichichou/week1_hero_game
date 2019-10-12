@@ -1,15 +1,18 @@
 .battle {
     display:flex;
-    justify-content: space-evenly;
+    
 }
 
-.battle img {
-    height: 100px;
-    width: auto;
+.enemy img {
+    
 }
 
-div#enemy {
-   
+#enemy2_img{
+    width:90px;
+}
+
+div.enemy {
+    justify-content: flex-end;
 }
 
 div#user {

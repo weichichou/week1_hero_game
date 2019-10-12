@@ -40,8 +40,8 @@ function equipWeapon(person){
 
 const innImg = document.getElementById('inn');
 innImg.addEventListener('click',function(event){
-    console.log()
     rest(hero);
+    displayStatus();
 })
 
 
@@ -89,20 +89,56 @@ const enemy1 = {
     health: 10,
 }
 
+const enemy2 = {
+    health: 10,
+}
+
+
+//Enemy Events
+
 const enemy1Img = document.getElementById('enemy1_img')
 enemy1Img.addEventListener('click',function(event){
 
     //enemy health decreases
     enemy1.health -= hero.weapon.damage;
-    document.querySelector('#enemy_status h4').innerHTML = `Health: ${enemy1.health}`
+    document.querySelector('#enemy1_status h4').innerHTML = `Health: ${enemy1.health}`
 
     //if health <= 0, image disapper
     if (enemy1.health <= 0){
-        document.getElementById('enemy_status').style.display = 'none';
-        document.querySelector('.enemy_img').style.display = 'none';
+        document.getElementById('enemy1_status').style.display = 'none';
+        document.getElementById('enemy1_img').style.display = 'none';
         const winMessage = document.createElement('h1');
         winMessage.innerHTML = `YOU WIN!!`
-        document.getElementById('enemy').appendChild(winMessage);
+        document.getElementById('enemy1').appendChild(winMessage);
+    }
+
+})
+
+const enemy2Img = document.getElementById('enemy2_img')
+enemy2Img.addEventListener('click',function(event){
+
+    //enemy health decreases
+    enemy2.health -= hero.weapon.damage;
+    document.querySelector('#enemy2_status h4').innerHTML = `Health: ${enemy2.health}`
+
+
+    //enemy attack user
+    if (enemy2.health > 0 ){
+        setTimeout(function(){
+            alert("Enemy 2 attacks!");
+            hero.health -= 3;
+            displayStatus();
+            },300);
+    }
+
+
+    //if health <= 0, image disapper
+    if (enemy2.health <= 0){
+        document.getElementById('enemy2_status').style.display = 'none';
+        document.getElementById('enemy2_img').style.display = 'none';
+        const winMessage = document.createElement('h1');
+        winMessage.innerHTML = `YOU WIN!!`
+        document.getElementById('enemy2').appendChild(winMessage);
     }
 
 })
