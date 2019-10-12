@@ -98,6 +98,10 @@ const enemy2 = {
     health: 10,
 }
 
+const enemy3 = {
+    health: 10,
+}
+
 
 //Enemy Events
 
@@ -146,6 +150,48 @@ enemy2Img.addEventListener('click',function(event){
         const winMessage = document.createElement('h1');
         winMessage.innerHTML = `YOU WIN!!`
         document.getElementById('enemy2').appendChild(winMessage);
+    }
+
+})
+
+const enemy3Img = document.getElementById('enemy3_img')
+enemy3Img.addEventListener('click',function(event){
+
+    //enemy health decreases
+    enemy3.health -= hero.weapon.damage;
+    document.querySelector('#enemy3_status h4').innerHTML = `Health: ${enemy3.health}`
+
+    //enemy restore health
+    const possibilityOfRegenerate = Math.random();
+    console.log(possibilityOfRegenerate);
+    if (enemy3.health <= 3 && possibilityOfRegenerate >= 0.5){
+        enemy3.health = 10;
+        document.querySelector('#enemy3_status h4').innerHTML = `Health: ${enemy3.health}`
+        alert(`Enemy 3 regenerates health!`);
+    }
+
+
+    //enemy attack user
+    const enemyAttackDamage = Math.floor(Math.random()*6)+1;
+    if (enemy3.health > 0 ){
+        setTimeout(function(){
+            alert(`Enemy 3 attacks! You lose ${enemyAttackDamage} health`);
+
+            hero.health -= enemyAttackDamage;
+            displayStatus();
+            },300);
+    }
+    
+    
+
+
+    //if health <= 0, image disapper
+    if (enemy3.health <= 0){
+        document.getElementById('enemy3_status').style.display = 'none';
+        document.getElementById('enemy3_img').style.display = 'none';
+        const winMessage = document.createElement('h1');
+        winMessage.innerHTML = `YOU WIN!!`
+        document.getElementById('enemy3').appendChild(winMessage);
     }
 
 })
