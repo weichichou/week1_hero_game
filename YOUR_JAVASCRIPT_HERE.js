@@ -1,7 +1,10 @@
 // Write your JS here
 
-const inputName = window.prompt("What is your name?","");
+let inputName = window.prompt("What is your name?","");
 
+while (inputName == null || inputName ==''){
+     inputName = window.prompt("What is your name?","");
+}
 
 const hero = {
     name: `Hero ${inputName}`,
