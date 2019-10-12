@@ -22,6 +22,7 @@ function rest(person){
 
 function pickUpItem(person, weapon){
     person.inventory.push(weapon);
+    displayStatus();
 
 }
 
@@ -29,6 +30,7 @@ function equipWeapon(person){
     if (person.inventory.length > 0){
     person.weapon = person.inventory[0];
     }
+    displayStatus();
 }
 
 const innImg = document.getElementById('inn');
@@ -51,5 +53,31 @@ bagImg.addEventListener('click',function(event){
     equipWeapon(hero);
 })
 
+function showInventory(person){
+    let currentInventory ='';
+    for (i = 0; i < person.inventory.length; i++){
+        console.log(person.inventory[i].type)
+        console.log(person.inventory[i].damage)
+        currentInventory += `${person.inventory[i].type} (${person.inventory[i].damage}) `;
+        
+    }   
+    return currentInventory;
+}
+
+
+function displayStatus(){
+    const userName = document.getElementById('user_name')
+    const userHealth = document.getElementById('user_health')
+    const userWeapon = document.getElementById('user_weapon')
+    const userInventory = document.getElementById('user_inventory')
+
+    userName.innerHTML = hero.name
+    userHealth.innerHTML = `Heath: ${hero.health}`
+    userWeapon.innerHTML = `Weapon: ${hero.weapon.type}; Damage: ${hero.weapon.damage}`
+    userInventory.innerHTML = `Inventory: ${showInventory(hero)}`
+
+}
+
+displayStatus();
 
 

@@ -1,0 +1,40 @@
+.battle {
+    display:flex;
+    justify-content: space-evenly;
+}
+
+.battle img {
+    height: 100px;
+    width: auto;
+}
+
+div#enemy {
+   
+}
+
+div#user {
+    align-items: center;
+}
+
+div#rules {
+    text-align: center;
+}
+
+h4 {
+    font-weight: normal;
+}
+
+div#action {
+    display: flex;
+    justify-content: center;
+}
+
+div#action img {
+    height: 65px;
+    width: 75px;
+}
+
+
+button#run_the_test {
+    display: none;
+}
