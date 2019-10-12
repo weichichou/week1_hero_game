@@ -32,6 +32,7 @@ div#action {
 div#action img {
     height: 65px;
     width: 75px;
+    margin: 0 1rem;
 }
 
 

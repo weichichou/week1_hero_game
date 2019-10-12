@@ -1,7 +1,10 @@
 // Write your JS here
 
+const inputName = window.prompt("What is your name?","");
+
+
 const hero = {
-    name: 'Hero_Name',
+    name: `Hero ${inputName}`,
     heroic: true,
     inventory: [],
     health: 10,
@@ -10,6 +13,7 @@ const hero = {
         damage: 2,
     }
 };
+
 
 function rest(person){
     if (person.health === 10){
@@ -43,9 +47,9 @@ innImg.addEventListener('click',function(event){
 
 for(const weapon of weapons){
     const weaponImg = document.getElementById(weapon.type);
-    console.log(weapon)
     weaponImg.addEventListener('click',function(event){
         pickUpItem(hero, weapon);
+        weaponImg.style.display = 'none';
     })
 }
 
